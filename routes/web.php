@@ -15,10 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('task.index');
+    // return view('welcome');
 });
 
 Route::resource('task', TaskController::class);
 Route::post('Custom-sortable', [TaskController::class, "updatePosition"]);
 Route::get('/new-task', [TaskController::class, "new"])->name('new-task');
 Route::post('/update-task/{id}', [TaskController::class, "updateTask"])->name("update-task");
+Route::get('delete-task/{id}', [TaskController::class, "delete"])->name('delete-task');

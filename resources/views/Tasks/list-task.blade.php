@@ -34,7 +34,9 @@
               <td class="pl-3"><i class="fa fa-sort"></i></td>
               <td>{{ $task->name }}</td>
               <td>{{ $task->priority }}</td>
-              <td><a class="btn btn-primary" href="{{ route('task.edit', $task->id) }}">Edit</a></td>
+              <td><a class="btn btn-primary" href="{{ route('task.edit', $task->id) }}">Edit</a>
+                <a class="btn btn-danger" href="{{ route('delete-task', $task->id) }}">Delete</a>
+              </td>
             </tr>
           @endforeach
         </tbody>
